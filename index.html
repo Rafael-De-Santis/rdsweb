@@ -160,6 +160,26 @@
 					@apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-magenta-400;
 				}
 			}
+
+			/* Energy Ball Animations */
+			@keyframes energyBallMove {
+				0% { transform: translateY(0) scale(1); }
+				100% { transform: translateY(24px) scale(1.12); }
+			}
+			@keyframes energyBallColor {
+				0% { filter: hue-rotate(0deg) brightness(1.2) saturate(2); }
+				100% { filter: hue-rotate(360deg) brightness(1.2) saturate(2); }
+			}
+			.energy-ball {
+				width: 6rem;
+				height: 6rem;
+				border-radius: 50%;
+				background: conic-gradient(from 0deg, #fff 0%, #a21caf 20%, #7c3aed 40%, #06b6d4 60%, #f472b6 80%, #fff 100%);
+				opacity: 0.95;
+				box-shadow: 0 0 64px 24px rgba(162, 28, 175, 0.4), 0 0 128px 48px rgba(6, 182, 212, 0.4), 0 0 32px 8px rgba(255, 255, 255, 0.53);
+				filter: drop-shadow(0 0 40px #a21caf) drop-shadow(0 0 80px #06b6d4);
+				animation: energyBallMove 4s ease-in-out infinite alternate, energyBallColor 6s linear infinite;
+			}
 		</style>
 	</head>
 	<body class="bg-background text-foreground">
@@ -210,18 +230,55 @@
 						<div class="bg-card border border-border rounded-lg p-8">
 							<header class="mb-6">
 								<h2 class="text-4xl font-bold mb-4">
-									<a href="https://github.com/Rafael-De-Santis/DigitalClock" class="gradient-text hover:opacity-80 transition-opacity">
-										Countries Clock with Time Background
+									<a href="https://fqa.services" target="_blank" class="gradient-text hover:opacity-80 transition-opacity inline-block">
+										fqa.services
 									</a>
 								</h2>
-								<p class="text-muted-foreground text-lg">JavaScript, HTML, CSS</p>
+								<p class="text-muted-foreground text-lg">Data Science, Business Intelligence & AI Integration Solutions</p>
 							</header>
-							<a href="https://github.com/Rafael-De-Santis/DigitalClock" class="block mb-6">
-								<img src="images/dclock.png" alt="Digital Clock Project" class="w-full h-64 object-cover rounded-lg" />
+							<a href="https://fqa.services" target="_blank" class="relative w-full flex justify-center items-center mb-6 py-16 overflow-visible min-h-[256px] block group">
+								<!-- Background grid and radial gradient for seamless transition -->
+								<div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:64px_64px] pointer-events-none rounded-lg"></div>
+								<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(13,13,13,0)_0,rgba(13,13,13,1)_100%)] pointer-events-none rounded-lg"></div>
+								<div class="relative z-10 flex justify-center w-full">
+									<div class="energy-ball group-hover:scale-110 transition-transform duration-300 cursor-pointer"></div>
+								</div>
 							</a>
-							<div class="flex gap-4">
-								<a href="https://github.com/Rafael-De-Santis/DigitalClock" class="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors">
-									View Code
+							<div class="text-foreground mb-6 space-y-4">
+								<p>
+									FQA Services is a technology and analytics services company that helps businesses transform raw data into actionable insights, automate critical processes, and make smarter operational decisions.
+								</p>
+								<p>
+									We specialize in data analytics, automation, AI-powered solutions, and custom software development, supporting organizations across supply chain, operations, finance, and service-based industries. Our solutions are designed to reduce manual effort, improve visibility, and enable data-driven decision-making at scale.
+								</p>
+								<p>
+									By combining advanced analytics, modern cloud technologies, and intelligent automation, we deliver practical, production-ready systems—ranging from dashboards and reporting platforms to AI-driven forecasting, document processing, and workflow automation.
+								</p>
+								<p>
+									Our focus is on clarity, reliability, and measurable business impact, helping clients move from fragmented data and reactive processes to streamlined, insight-driven operations.
+								</p>
+								<p class="mt-6 pt-4 border-t border-border">
+									<strong>Technical Details:</strong> Fully customized solution with privately hosted infrastructure, dedicated backend and frontend systems.
+								</p>
+							</div>
+							<div class="flex gap-4 flex-wrap">
+								<a href="https://fqa.services" target="_blank" class="bg-accent text-accent-foreground px-6 py-3 rounded-lg hover:bg-accent/90 transition-colors inline-flex items-center gap-2 font-semibold shadow-lg shadow-accent/20">
+									<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+									</svg>
+									Visit Website
+								</a>
+								<a href="https://github.com/FQAServices/fqas-frontend" target="_blank" class="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+										<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+									</svg>
+									Frontend Repository
+								</a>
+								<a href="https://github.com/FQAServices/fqaservices" target="_blank" class="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
+									<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+										<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+									</svg>
+									Backend Repository
 								</a>
 							</div>
 						</div>
@@ -233,18 +290,370 @@
 						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
 							<header class="p-6">
 								<h2 class="text-2xl font-bold mb-3">
-									<a href="https://github.com/Rafael-De-Santis/UrbanDictionary" class="gradient-text hover:opacity-80 transition-opacity">
-										Urban Definitions using API
+									<span class="gradient-text">AI Contract Agent</span>
+								</h2>
+								<p class="text-muted-foreground">Intelligent contract management system handling 100+ supplier and customer contracts with AI-powered analysis and compliance tracking.</p>
+							</header>
+							<div class="block">
+								<img src="images/AiContracts.png" alt="AI Contract Agent" class="w-full h-48 object-cover" />
+							</div>
+							<div class="p-6">
+								<button data-project-id="contract-agent" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									Learn More
+								</button>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<span class="gradient-text">AI Commercial Invoice Data Extraction Scanner</span>
+								</h2>
+								<p class="text-muted-foreground">AI-powered document processing with multiple modes: Duty Drawbacks, Quality First Articles Form 1, Forms 1-2-3 for automated invoice processing.</p>
+							</header>
+							<div class="block">
+								<img src="images/invoicereviwer.png" alt="AI Commercial Invoice Data Extraction Scanner" class="w-full h-48 object-cover" />
+							</div>
+							<div class="p-6">
+								<button data-project-id="invoice-scanner" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									Learn More
+								</button>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<span class="gradient-text">Commodity Material News Web Scraper</span>
+								</h2>
+								<p class="text-muted-foreground">Automated web scraping system collecting and aggregating commodity material news from multiple sources for market intelligence.</p>
+							</header>
+							<div class="block">
+								<img src="images/CommodityNewsScrapper.png" alt="Commodity Material News Web Scraper" class="w-full h-48 object-cover" />
+							</div>
+							<div class="p-6">
+								<button data-project-id="commodity-scraper" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									Learn More
+								</button>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<span class="gradient-text">Smart Demand Forecast</span>
+								</h2>
+								<p class="text-muted-foreground">ML suite with 9+ statistical and ML models with AI reviewer selecting optimal forecast values for material demand analysis.</p>
+							</header>
+							<div class="block">
+								<img src="images/DemandForecasting.png" alt="Smart Demand Forecast" class="w-full h-48 object-cover" />
+							</div>
+							<div class="p-6">
+								<button data-project-id="demand-forecast" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									Learn More
+								</button>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<span class="gradient-text">Supplier Report Generator Application</span>
+								</h2>
+								<p class="text-muted-foreground">Mass production of 300+ individualized supplier reports with automated organization, email generation, and SharePoint integration - all with just 5 clicks.</p>
+							</header>
+							<div class="block">
+								<img src="images/ReportGenerator.png" alt="Supplier Report Generator Application" class="w-full h-48 object-cover" />
+							</div>
+							<div class="p-6">
+								<button data-project-id="supplier-generator" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									Learn More
+								</button>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<span class="gradient-text">ERP Data Collections</span>
+								</h2>
+								<p class="text-muted-foreground">Automated ERP data aggregation system collecting and organizing data on daily, weekly, and monthly schedules.</p>
+							</header>
+							<div class="block">
+								<img src="images/DataCollections.png" alt="ERP Data Collections" class="w-full h-48 object-cover" />
+							</div>
+							<div class="p-6">
+								<button data-project-id="erp-collections" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									Learn More
+								</button>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<span class="gradient-text">Sales Orders Historical Comparison</span>
+								</h2>
+								<p class="text-muted-foreground">Historical sales order analysis system enabling comparison and trend analysis across different time periods.</p>
+							</header>
+							<div class="block">
+								<img src="images/SalesHistoricalComparison.png" alt="Sales Orders Historical Comparison" class="w-full h-48 object-cover" />
+							</div>
+							<div class="p-6">
+								<button data-project-id="sales-historical" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									Learn More
+								</button>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<span class="gradient-text">Line of Balance</span>
+								</h2>
+								<p class="text-muted-foreground">Balance analysis reporting system providing comprehensive insights into company financial and operational balance metrics.</p>
+							</header>
+							<div class="block">
+								<img src="images/LineOfBalance.png" alt="Line of Balance" class="w-full h-48 object-cover" />
+							</div>
+							<div class="p-6">
+								<button data-project-id="line-of-balance" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									Learn More
+								</button>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<span class="gradient-text">Repairs Revenue Dashboard</span>
+								</h2>
+								<p class="text-muted-foreground">Comprehensive revenue tracking and analytics dashboard for repair services and operations with real-time insights.</p>
+							</header>
+							<div class="block">
+								<img src="images/RepairsDashboard.png" alt="Repairs Revenue Dashboard" class="w-full h-48 object-cover" />
+							</div>
+							<div class="p-6">
+								<button data-project-id="repairs-revenue" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									Learn More
+								</button>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<span class="gradient-text">Exceptions Report for Production Orders</span>
+								</h2>
+								<p class="text-muted-foreground">Exception tracking and monitoring system for production orders, identifying bottlenecks and issues in manufacturing processes.</p>
+							</header>
+							<div class="block">
+								<img src="images/ProdExceptions.png" alt="Exceptions Report for Production Orders" class="w-full h-48 object-cover" />
+							</div>
+							<div class="p-6">
+								<button data-project-id="production-exceptions" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									Learn More
+								</button>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<span class="gradient-text">Exceptions Report for Purchase Orders</span>
+								</h2>
+								<p class="text-muted-foreground">Comprehensive exception tracking system for purchase orders, identifying and flagging issues requiring immediate attention.</p>
+							</header>
+							<div class="block">
+								<img src="images/POExceptions.png" alt="Exceptions Report for Purchase Orders" class="w-full h-48 object-cover" />
+							</div>
+							<div class="p-6">
+								<button data-project-id="po-exceptions" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									Learn More
+								</button>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<span class="gradient-text">Purchase Orders On-Time Delivery Report</span>
+								</h2>
+								<p class="text-muted-foreground">Vendor delivery performance tracking system monitoring on-time delivery metrics for purchase orders.</p>
+							</header>
+							<div class="block">
+								<img src="images/POOTD.png" alt="Purchase Orders On-Time Delivery Report" class="w-full h-48 object-cover" />
+							</div>
+							<div class="p-6">
+								<button data-project-id="po-otd" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									Learn More
+								</button>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<span class="gradient-text">Production Capacity Report</span>
+								</h2>
+								<p class="text-muted-foreground">Mass production capacity tracking with workforce planning, forecasting months ahead for optimal resource allocation and production scheduling.</p>
+							</header>
+							<div class="block">
+								<img src="images/CapacityReport.png" alt="Production Capacity Report" class="w-full h-48 object-cover" />
+							</div>
+							<div class="p-6">
+								<button data-project-id="production-capacity" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									Learn More
+								</button>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<span class="gradient-text">Release Schedule Quadrant Report</span>
+								</h2>
+								<p class="text-muted-foreground">Sales order synchronization system organizing warehouse releases with blockers, flags, and cross-departmental logic for on-time shipping.</p>
+							</header>
+							<div class="block">
+								<img src="images/ReleaseReport.png" alt="Release Schedule Quadrant Report" class="w-full h-48 object-cover" />
+							</div>
+							<div class="p-6">
+								<button data-project-id="release-schedule" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									Learn More
+								</button>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<a href="https://public.tableau.com/app/profile/d4tapunk/viz/SpaceMissionDashboard_16588213095360/SpaceMissions?publish=yes" class="gradient-text hover:opacity-80 transition-opacity">
+										Space Missions Dashboard
 									</a>
 								</h2>
-								<p class="text-muted-foreground">JavaScript, HTML, CSS, Tailwind, APIs</p>
+								<p class="text-muted-foreground">Relevant information about Space missions. Companies, Vehicles, Wind Speed, Temps and more.</p>
 							</header>
-							<a href="https://github.com/Rafael-De-Santis/UrbanDictionary" class="block">
-								<img src="images/urbandictionary.png" alt="Urban Dictionary Project" class="w-full h-48 object-cover" />
+							<a href="https://public.tableau.com/app/profile/d4tapunk/viz/SpaceMissionDashboard_16588213095360/SpaceMissions?publish=yes" class="block">
+								<img src="images/spaceship2.jpg" alt="Space Missions Dashboard" class="w-full h-48 object-cover" />
 							</a>
 							<div class="p-6">
-								<a href="https://github.com/Rafael-De-Santis/UrbanDictionary" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									View Code
+								<a href="https://public.tableau.com/app/profile/d4tapunk/viz/SpaceMissionDashboard_16588213095360/SpaceMissions?publish=yes" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									View Dashboard
+								</a>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<a href="https://public.tableau.com/app/profile/d4tapunk/viz/AirlineDashboard_16583880173630/SFOFlights?publish=yes" class="gradient-text hover:opacity-80 transition-opacity">
+										San Francisco Airport Dashboard
+									</a>
+								</h2>
+								<p class="text-muted-foreground">Generating insights using Tableau.</p>
+							</header>
+							<a href="https://public.tableau.com/app/profile/d4tapunk/viz/AirlineDashboard_16583880173630/SFOFlights?publish=yes" class="block">
+								<img src="images/airplanes1.jpg" alt="SFO Dashboard" class="w-full h-48 object-cover" />
+							</a>
+							<div class="p-6">
+								<a href="https://public.tableau.com/app/profile/d4tapunk/viz/AirlineDashboard_16583880173630/SFOFlights?publish=yes" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									View Dashboard
+								</a>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<a href="https://public.tableau.com/app/profile/d4tapunk/viz/CustomerSalesAnalysis_16583014791490/Dashboard1?publish=yes" class="gradient-text hover:opacity-80 transition-opacity">
+										Customers Sales Dashboard
+									</a>
+								</h2>
+								<p class="text-muted-foreground">Descriptive Data Analysis using Tableau, generating sales insights</p>
+							</header>
+							<a href="https://public.tableau.com/app/profile/d4tapunk/viz/CustomerSalesAnalysis_16583014791490/Dashboard1?publish=yes" class="block">
+								<img src="images/customersales.jpg" alt="Customer Sales Dashboard" class="w-full h-48 object-cover" />
+							</a>
+							<div class="p-6">
+								<a href="https://public.tableau.com/app/profile/d4tapunk/viz/CustomerSalesAnalysis_16583014791490/Dashboard1?publish=yes" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									View Dashboard
+								</a>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<a href="https://github.com/d4tapunk/Portfolio-Projects/blob/main/Movies%20Correlation%20Project.ipynb" class="gradient-text hover:opacity-80 transition-opacity">
+										Movies Correlation Project in Python
+									</a>
+								</h2>
+								<p class="text-muted-foreground">Correlation Project in Python3 to generate insights about the Movie Industry using the budges, gross and more data.</p>
+							</header>
+							<a href="https://github.com/d4tapunk/Portfolio-Projects/blob/main/Movies%20Correlation%20Project.ipynb" class="block">
+								<img src="images/movies.jpg" alt="Movies Correlation Project" class="w-full h-48 object-cover" />
+							</a>
+							<div class="p-6">
+								<a href="https://github.com/d4tapunk/Portfolio-Projects/blob/main/Movies%20Correlation%20Project.ipynb" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									View Project
+								</a>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<a href="https://public.tableau.com/app/profile/d4tapunk/viz/CovidDashboard_16575641585540/Dashboard1?publish=yes" class="gradient-text hover:opacity-80 transition-opacity">
+										COVID19 Tableau Dashboard
+									</a>
+								</h2>
+								<p class="text-muted-foreground">Creating Visualization after a SQL Data Cleaning proccess to analize the virus behavior through the years and generate conclusions.</p>
+							</header>
+							<a href="https://public.tableau.com/app/profile/d4tapunk/viz/CovidDashboard_16575641585540/Dashboard1?publish=yes" class="block">
+								<img src="images/covid.jpg" alt="COVID Dashboard" class="w-full h-48 object-cover" />
+							</a>
+							<div class="p-6">
+								<a href="https://public.tableau.com/app/profile/d4tapunk/viz/CovidDashboard_16575641585540/Dashboard1?publish=yes" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									View Dashboard
+								</a>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<a href="https://github.com/d4tapunk/Portfolio-Projects/blob/main/COVID%20SQL%20Project.sql" class="gradient-text hover:opacity-80 transition-opacity">
+										Data Exploration in SQL
+									</a>
+								</h2>
+								<p class="text-muted-foreground">Generating Insights doing EDA</p>
+							</header>
+							<a href="https://github.com/d4tapunk/Portfolio-Projects/blob/main/COVID%20SQL%20Project.sql" class="block">
+								<img src="images/eda.jpg" alt="COVID SQL Project" class="w-full h-48 object-cover" />
+							</a>
+							<div class="p-6">
+								<a href="https://github.com/d4tapunk/Portfolio-Projects/blob/main/COVID%20SQL%20Project.sql" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									View Project
+								</a>
+							</div>
+						</article>
+
+						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+							<header class="p-6">
+								<h2 class="text-2xl font-bold mb-3">
+									<a href="https://github.com/d4tapunk/Portfolio-Projects/blob/main/SQL%20Data%20Cleaning%20NashvilleHousing.sql" class="gradient-text hover:opacity-80 transition-opacity">
+										Data Cleaning in SQL
+									</a>
+								</h2>
+								<p class="text-muted-foreground">Writing SQL queries to Clean large amount of Data and later create Visualizations.</p>
+							</header>
+							<a href="https://github.com/d4tapunk/Portfolio-Projects/blob/main/SQL%20Data%20Cleaning%20NashvilleHousing.sql" class="block">
+								<img src="images/housing.jpg" alt="SQL Data Cleaning" class="w-full h-48 object-cover" />
+							</a>
+							<div class="p-6">
+								<a href="https://github.com/d4tapunk/Portfolio-Projects/blob/main/SQL%20Data%20Cleaning%20NashvilleHousing.sql" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									View Dashboard
 								</a>
 							</div>
 						</article>
@@ -274,371 +683,19 @@
 						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
 							<header class="p-6">
 								<h2 class="text-2xl font-bold mb-3">
-									<a href="https://github.com/d4tapunk/Portfolio-Projects/blob/main/SQL%20Data%20Cleaning%20NashvilleHousing.sql" class="gradient-text hover:opacity-80 transition-opacity">
-										Data Cleaning in SQL
+									<a href="https://github.com/Rafael-De-Santis/UrbanDictionary" class="gradient-text hover:opacity-80 transition-opacity">
+										Urban Definitions using API
 									</a>
 								</h2>
-								<p class="text-muted-foreground">Writing SQL queries to Clean large amount of Data and later create Visualizations.</p>
+								<p class="text-muted-foreground">JavaScript, HTML, CSS, Tailwind, APIs</p>
 							</header>
-							<a href="https://github.com/d4tapunk/Portfolio-Projects/blob/main/SQL%20Data%20Cleaning%20NashvilleHousing.sql" class="block">
-								<img src="images/housing.jpg" alt="SQL Data Cleaning" class="w-full h-48 object-cover" />
+							<a href="https://github.com/Rafael-De-Santis/UrbanDictionary" class="block">
+								<img src="images/urbandictionary.png" alt="Urban Dictionary Project" class="w-full h-48 object-cover" />
 							</a>
 							<div class="p-6">
-								<a href="https://github.com/d4tapunk/Portfolio-Projects/blob/main/SQL%20Data%20Cleaning%20NashvilleHousing.sql" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									View Dashboard
+								<a href="https://github.com/Rafael-De-Santis/UrbanDictionary" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
+									View Code
 								</a>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<a href="https://github.com/d4tapunk/Portfolio-Projects/blob/main/COVID%20SQL%20Project.sql" class="gradient-text hover:opacity-80 transition-opacity">
-										Data Exploration in SQL
-									</a>
-								</h2>
-								<p class="text-muted-foreground">Generating Insights doing EDA</p>
-							</header>
-							<a href="https://github.com/d4tapunk/Portfolio-Projects/blob/main/COVID%20SQL%20Project.sql" class="block">
-								<img src="images/eda.jpg" alt="COVID SQL Project" class="w-full h-48 object-cover" />
-							</a>
-							<div class="p-6">
-								<a href="https://github.com/d4tapunk/Portfolio-Projects/blob/main/COVID%20SQL%20Project.sql" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									View Project
-								</a>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<a href="https://public.tableau.com/app/profile/d4tapunk/viz/CovidDashboard_16575641585540/Dashboard1?publish=yes" class="gradient-text hover:opacity-80 transition-opacity">
-										COVID19 Tableau Dashboard
-									</a>
-								</h2>
-								<p class="text-muted-foreground">Creating Visualization after a SQL Data Cleaning proccess to analize the virus behavior through the years and generate conclusions.</p>
-							</header>
-							<a href="https://public.tableau.com/app/profile/d4tapunk/viz/CovidDashboard_16575641585540/Dashboard1?publish=yes" class="block">
-								<img src="images/covid.jpg" alt="COVID Dashboard" class="w-full h-48 object-cover" />
-							</a>
-							<div class="p-6">
-								<a href="https://public.tableau.com/app/profile/d4tapunk/viz/CovidDashboard_16575641585540/Dashboard1?publish=yes" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									View Dashboard
-								</a>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<a href="https://github.com/d4tapunk/Portfolio-Projects/blob/main/Movies%20Correlation%20Project.ipynb" class="gradient-text hover:opacity-80 transition-opacity">
-										Movies Correlation Project in Python
-									</a>
-								</h2>
-								<p class="text-muted-foreground">Correlation Project in Python3 to generate insights about the Movie Industry using the budges, gross and more data.</p>
-							</header>
-							<a href="https://github.com/d4tapunk/Portfolio-Projects/blob/main/Movies%20Correlation%20Project.ipynb" class="block">
-								<img src="images/movies.jpg" alt="Movies Correlation Project" class="w-full h-48 object-cover" />
-							</a>
-							<div class="p-6">
-								<a href="https://github.com/d4tapunk/Portfolio-Projects/blob/main/Movies%20Correlation%20Project.ipynb" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									View Project
-								</a>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<a href="https://public.tableau.com/app/profile/d4tapunk/viz/CustomerSalesAnalysis_16583014791490/Dashboard1?publish=yes" class="gradient-text hover:opacity-80 transition-opacity">
-										Customers Sales Dashboard
-									</a>
-								</h2>
-								<p class="text-muted-foreground">Descriptive Data Analysis using Tableau, generating sales insights</p>
-							</header>
-							<a href="https://public.tableau.com/app/profile/d4tapunk/viz/CustomerSalesAnalysis_16583014791490/Dashboard1?publish=yes" class="block">
-								<img src="images/customersales.jpg" alt="Customer Sales Dashboard" class="w-full h-48 object-cover" />
-							</a>
-							<div class="p-6">
-								<a href="https://public.tableau.com/app/profile/d4tapunk/viz/CustomerSalesAnalysis_16583014791490/Dashboard1?publish=yes" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									View Dashboard
-								</a>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<a href="https://public.tableau.com/app/profile/d4tapunk/viz/AirlineDashboard_16583880173630/SFOFlights?publish=yes" class="gradient-text hover:opacity-80 transition-opacity">
-										San Francisco Airport Dashboard
-									</a>
-								</h2>
-								<p class="text-muted-foreground">Generating insights using Tableau.</p>
-							</header>
-							<a href="https://public.tableau.com/app/profile/d4tapunk/viz/AirlineDashboard_16583880173630/SFOFlights?publish=yes" class="block">
-								<img src="images/airplanes1.jpg" alt="SFO Dashboard" class="w-full h-48 object-cover" />
-							</a>
-							<div class="p-6">
-								<a href="https://public.tableau.com/app/profile/d4tapunk/viz/AirlineDashboard_16583880173630/SFOFlights?publish=yes" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									View Dashboard
-								</a>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<a href="https://public.tableau.com/app/profile/d4tapunk/viz/SpaceMissionDashboard_16588213095360/SpaceMissions?publish=yes" class="gradient-text hover:opacity-80 transition-opacity">
-										Space Missions Dashboard
-									</a>
-								</h2>
-								<p class="text-muted-foreground">Relevant information about Space missions. Companies, Vehicles, Wind Speed, Temps and more.</p>
-							</header>
-							<a href="https://public.tableau.com/app/profile/d4tapunk/viz/SpaceMissionDashboard_16588213095360/SpaceMissions?publish=yes" class="block">
-								<img src="images/spaceship2.jpg" alt="Space Missions Dashboard" class="w-full h-48 object-cover" />
-							</a>
-							<div class="p-6">
-								<a href="https://public.tableau.com/app/profile/d4tapunk/viz/SpaceMissionDashboard_16588213095360/SpaceMissions?publish=yes" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									View Dashboard
-								</a>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<span class="gradient-text">Release Schedule Quadrant Report</span>
-								</h2>
-								<p class="text-muted-foreground">Sales order synchronization system organizing warehouse releases with blockers, flags, and cross-departmental logic for on-time shipping.</p>
-							</header>
-							<div class="block">
-								<img src="images/ReleaseReport.png" alt="Release Schedule Quadrant Report" class="w-full h-48 object-cover" />
-							</div>
-							<div class="p-6">
-								<button data-project-id="release-schedule" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									Learn More
-								</button>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<span class="gradient-text">Production Capacity Report</span>
-								</h2>
-								<p class="text-muted-foreground">Mass production capacity tracking with workforce planning, forecasting months ahead for optimal resource allocation and production scheduling.</p>
-							</header>
-							<div class="block">
-								<img src="images/CapacityReport.png" alt="Production Capacity Report" class="w-full h-48 object-cover" />
-							</div>
-							<div class="p-6">
-								<button data-project-id="production-capacity" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									Learn More
-								</button>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<span class="gradient-text">Purchase Orders On-Time Delivery Report</span>
-								</h2>
-								<p class="text-muted-foreground">Vendor delivery performance tracking system monitoring on-time delivery metrics for purchase orders.</p>
-							</header>
-							<div class="block">
-								<img src="images/POOTD.png" alt="Purchase Orders On-Time Delivery Report" class="w-full h-48 object-cover" />
-							</div>
-							<div class="p-6">
-								<button data-project-id="po-otd" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									Learn More
-								</button>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<span class="gradient-text">Exceptions Report for Purchase Orders</span>
-								</h2>
-								<p class="text-muted-foreground">Comprehensive exception tracking system for purchase orders, identifying and flagging issues requiring immediate attention.</p>
-							</header>
-							<div class="block">
-								<img src="images/POExceptions.png" alt="Exceptions Report for Purchase Orders" class="w-full h-48 object-cover" />
-							</div>
-							<div class="p-6">
-								<button data-project-id="po-exceptions" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									Learn More
-								</button>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<span class="gradient-text">Exceptions Report for Production Orders</span>
-								</h2>
-								<p class="text-muted-foreground">Exception tracking and monitoring system for production orders, identifying bottlenecks and issues in manufacturing processes.</p>
-							</header>
-							<div class="block">
-								<img src="images/ProdExceptions.png" alt="Exceptions Report for Production Orders" class="w-full h-48 object-cover" />
-							</div>
-							<div class="p-6">
-								<button data-project-id="production-exceptions" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									Learn More
-								</button>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<span class="gradient-text">Repairs Revenue Dashboard</span>
-								</h2>
-								<p class="text-muted-foreground">Comprehensive revenue tracking and analytics dashboard for repair services and operations with real-time insights.</p>
-							</header>
-							<div class="block">
-								<img src="images/RepairsDashboard.png" alt="Repairs Revenue Dashboard" class="w-full h-48 object-cover" />
-							</div>
-							<div class="p-6">
-								<button data-project-id="repairs-revenue" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									Learn More
-								</button>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<span class="gradient-text">Line of Balance</span>
-								</h2>
-								<p class="text-muted-foreground">Balance analysis reporting system providing comprehensive insights into company financial and operational balance metrics.</p>
-							</header>
-							<div class="block">
-								<img src="images/LineOfBalance.png" alt="Line of Balance" class="w-full h-48 object-cover" />
-							</div>
-							<div class="p-6">
-								<button data-project-id="line-of-balance" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									Learn More
-								</button>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<span class="gradient-text">Sales Orders Historical Comparison</span>
-								</h2>
-								<p class="text-muted-foreground">Historical sales order analysis system enabling comparison and trend analysis across different time periods.</p>
-							</header>
-							<div class="block">
-								<img src="images/SalesHistoricalComparison.png" alt="Sales Orders Historical Comparison" class="w-full h-48 object-cover" />
-							</div>
-							<div class="p-6">
-								<button data-project-id="sales-historical" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									Learn More
-								</button>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<span class="gradient-text">ERP Data Collections</span>
-								</h2>
-								<p class="text-muted-foreground">Automated ERP data aggregation system collecting and organizing data on daily, weekly, and monthly schedules.</p>
-							</header>
-							<div class="block">
-								<img src="images/DataCollections.png" alt="ERP Data Collections" class="w-full h-48 object-cover" />
-							</div>
-							<div class="p-6">
-								<button data-project-id="erp-collections" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									Learn More
-								</button>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<span class="gradient-text">Supplier Report Generator Application</span>
-								</h2>
-								<p class="text-muted-foreground">Mass production of 300+ individualized supplier reports with automated organization, email generation, and SharePoint integration - all with just 5 clicks.</p>
-							</header>
-							<div class="block">
-								<img src="images/ReportGenerator.png" alt="Supplier Report Generator Application" class="w-full h-48 object-cover" />
-							</div>
-							<div class="p-6">
-								<button data-project-id="supplier-generator" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									Learn More
-								</button>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<span class="gradient-text">Smart Demand Forecast</span>
-								</h2>
-								<p class="text-muted-foreground">ML suite with 9+ statistical and ML models with AI reviewer selecting optimal forecast values for material demand analysis.</p>
-							</header>
-							<div class="block">
-								<img src="images/DemandForecasting.png" alt="Smart Demand Forecast" class="w-full h-48 object-cover" />
-							</div>
-							<div class="p-6">
-								<button data-project-id="demand-forecast" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									Learn More
-								</button>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<span class="gradient-text">Commodity Material News Web Scraper</span>
-								</h2>
-								<p class="text-muted-foreground">Automated web scraping system collecting and aggregating commodity material news from multiple sources for market intelligence.</p>
-							</header>
-							<div class="block">
-								<img src="images/CommodityNewsScrapper.png" alt="Commodity Material News Web Scraper" class="w-full h-48 object-cover" />
-							</div>
-							<div class="p-6">
-								<button data-project-id="commodity-scraper" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									Learn More
-								</button>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<span class="gradient-text">AI Commercial Invoice Data Extraction Scanner</span>
-								</h2>
-								<p class="text-muted-foreground">AI-powered document processing with multiple modes: Duty Drawbacks, Quality First Articles Form 1, Forms 1-2-3 for automated invoice processing.</p>
-							</header>
-							<div class="block">
-								<img src="images/invoicereviwer.png" alt="AI Commercial Invoice Data Extraction Scanner" class="w-full h-48 object-cover" />
-							</div>
-							<div class="p-6">
-								<button data-project-id="invoice-scanner" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									Learn More
-								</button>
-							</div>
-						</article>
-
-						<article class="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-							<header class="p-6">
-								<h2 class="text-2xl font-bold mb-3">
-									<span class="gradient-text">AI Contract Agent</span>
-								</h2>
-								<p class="text-muted-foreground">Intelligent contract management system handling 100+ supplier and customer contracts with AI-powered analysis and compliance tracking.</p>
-							</header>
-							<div class="block">
-								<img src="images/AiContracts.png" alt="AI Contract Agent" class="w-full h-48 object-cover" />
-							</div>
-							<div class="p-6">
-								<button data-project-id="contract-agent" class="learn-more-btn bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors inline-block">
-									Learn More
-								</button>
 							</div>
 						</article>
 
